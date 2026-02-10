@@ -5,7 +5,7 @@ import { nanoid } from 'nanoid'
 import { z } from "zod"
 import { authMiddleware } from './auth'
 
-const ROOM_TTL_SECONDS = 20
+const ROOM_TTL_SECONDS = 600
 
 const rooms = new Elysia ({prefix: '/room'}).post('/create',async ()  =>{
    const roomId = nanoid()
