@@ -1,53 +1,65 @@
-# 🔒 Private Realtime Chat
+# Private Real‑Time Chat
 
-A **minimal, truly private** 2-person realtime chat application.  
-No accounts • No login • No tracking • Just share a link and talk.
+A modern, responsive real‑time chat application built with **Next.js 14** (TypeScript) and deployed on **Vercel**. It provides private messaging with a polished UI and low‑latency communication.
 
-**Live Demo:** https://private-realtime-chat.vercel.app/
+## Live Demo
 
-Create a room in seconds, share the link with one person, and start chatting instantly — with a strict **2-user limit** per room.
+🚀 **Demo:** https://private-realtime-chat.vercel.app/
 
-## ✨ Features
+## Features
 
-- Private rooms with unique, shareable IDs
-- **Strict 2-user limit** per room (enforced on server)
-- Simple token-based access control via cookies
-- Messages stored temporarily in Redis
-- Clean, modern, mobile-friendly UI
-- Rooms auto-expire after 10 minutes (configurable TTL)
-- Zero persistent user data
+- Real‑time private messaging between users
+- Clean, responsive UI with dark‑mode support
+- Built with Next.js App Router and TypeScript
+- Deployed seamlessly on Vercel (CI/CD)
+- Easy to extend with authentication, rooms, and more
 
-## 🛠 Tech Stack
+## Tech Stack
 
-| Technology          | Purpose                              |
-|---------------------|--------------------------------------|
-| Next.js 14/15/16 + App Router | Frontend & full-stack framework     |
-| React 19            | UI components                        |
-| Elysia              | Lightweight, type-safe backend API   |
-| Upstash Redis       | Fast temporary storage + pub/sub     |
-| TanStack Query      | Data fetching, caching & realtime    |
-| Zod                 | Schema validation                    |
-| Tailwind CSS        | Styling                              |
+- **Framework:** Next.js (App Router)
+- **Language:** TypeScript
+- **Styling:** Vanilla CSS (modern design principles)
+- **Hosting:** Vercel
 
-## 🚀 How It Works
+## Project Structure
 
-### Room Creation
-- Click "Create Room" → unique room ID generated
-- Room metadata + participant counter stored in Redis
-- Room gets auto-expire TTL (default: 10 minutes = 600s)
-- Shareable link created instantly (`/room/[id]`)
+```
+src/
+├─ app/            # Next.js app router pages
+├─ components/     # Reusable UI components
+├─ hooks/          # Custom React hooks
+├─ lib/            # Utility libraries
+└─ proxy.ts        # API proxy configuration
+```
 
-### Access Control (2 users max)
-- First user joins → becomes participant #1
-- Second user joins → participant #2 (chat becomes active)
-- Third+ users → blocked with friendly message
-- Token (cookie) prevents unauthorized reconnects / duplicates
+## Getting Started
 
-### Messaging
-- Messages stored in Redis list: `messages:{roomId}`
-- Realtime updates via TanStack Query polling / invalidation
-- Messages cleared when room expires
+1. **Clone the repository**
+   ```bash
+   git clone <REPO_URL>
+   cd private-realtime-chat
+   ```
+2. **Install dependencies**
+   ```bash
+   npm install   # or `pnpm install` / `yarn`
+   ```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
+   Open http://localhost:3000 in your browser.
 
-### Room Expiration
-```ts
-const ROOM_TTL_SECONDS = 600; // 10 minutes
+## Available Scripts
+
+- `dev` – Starts the development server.
+- `build` – Builds the app for production.
+- `start` – Starts the production server.
+- `lint` – Runs ESLint.
+
+## Contributing
+
+Contributions are welcome! Open issues or submit pull requests. Improvements to UI, features, performance, or documentation are especially appreciated.
+
+## License
+
+MIT © 2026
