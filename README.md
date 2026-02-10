@@ -2,6 +2,10 @@
 
 A secure, ephemeral, request-based messaging application built for privacy and speed. Features real-time communication with zero persistence guarantees suitable for quick, secret conversations.
 
+### Live Demo available at: [private-realtime-chat.vercel.app](https://private-realtime-chat.vercel.app/)
+
+![Demo Screenshot](/demo-screenshot.png)
+
 [![Live Demo](https://img.shields.io/badge/Live-Demo-brightgreen?style=for-the-badge)](https://private-realtime-chat.vercel.app/)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![Upstash](https://img.shields.io/badge/Upstash-Redis%20%26%20Realtime-00E9A3?style=for-the-badge)](https://upstash.com/)
