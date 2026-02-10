@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🔒 Private Realtime Chat
 
-## Getting Started
+A **minimal, truly private** 2-person realtime chat application.  
+No accounts • No login • No tracking • Just share a link and talk.
 
-First, run the development server:
+**Live Demo:** https://private-realtime-chat.vercel.app/
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Create a room in seconds, share the link with one person, and start chatting instantly — with a strict **2-user limit** per room.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## ✨ Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- Private rooms with unique, shareable IDs
+- **Strict 2-user limit** per room (enforced on server)
+- Simple token-based access control via cookies
+- Messages stored temporarily in Redis
+- Clean, modern, mobile-friendly UI
+- Rooms auto-expire after 10 minutes (configurable TTL)
+- Zero persistent user data
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🛠 Tech Stack
 
-## Learn More
+| Technology          | Purpose                              |
+|---------------------|--------------------------------------|
+| Next.js 14/15/16 + App Router | Frontend & full-stack framework     |
+| React 19            | UI components                        |
+| Elysia              | Lightweight, type-safe backend API   |
+| Upstash Redis       | Fast temporary storage + pub/sub     |
+| TanStack Query      | Data fetching, caching & realtime    |
+| Zod                 | Schema validation                    |
+| Tailwind CSS        | Styling                              |
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 How It Works
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Room Creation
+- Click "Create Room" → unique room ID generated
+- Room metadata + participant counter stored in Redis
+- Room gets auto-expire TTL (default: 10 minutes = 600s)
+- Shareable link created instantly (`/room/[id]`)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Access Control (2 users max)
+- First user joins → becomes participant #1
+- Second user joins → participant #2 (chat becomes active)
+- Third+ users → blocked with friendly message
+- Token (cookie) prevents unauthorized reconnects / duplicates
 
-## Deploy on Vercel
+### Messaging
+- Messages stored in Redis list: `messages:{roomId}`
+- Realtime updates via TanStack Query polling / invalidation
+- Messages cleared when room expires
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Room Expiration
+```ts
+const ROOM_TTL_SECONDS = 600; // 10 minutes
