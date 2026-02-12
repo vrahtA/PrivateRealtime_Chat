@@ -13,12 +13,12 @@ A secure, ephemeral, request-based messaging application built for privacy and s
 
 ##  Key Features
 
-- ** Instant Real-time Messaging**: Powered by Upstash Realtime (WebSocket/SSE) for sub-millisecond latency.
-- ** Truly Ephemeral**: Rooms have a strict Time-to-Live (TTL). Once the timer hits zero, the room and all messages are permanently wiped from Redis.
-- ** Shared-Link Security**: Rooms are accessible only via a unique, non-guessable URL.
-- ** Capacity Limits**: Rooms are strictly limited to 2 participants to ensure privacy.
-- ** Token-Based Access**: Every participant is assigned a cryptographic token upon entry, preventing unauthorized eavesdropping.
-- ** Modern HUD Interface**: A clean, cyberpunk-inspired dark UI built with Tailwind CSS v4.
+- **Instant Real-time Messaging**: Powered by Upstash Realtime (WebSocket/SSE) for sub-millisecond latency.
+- **Truly Ephemeral**: Rooms have a strict Time-to-Live (TTL). Once the timer hits zero, the room and all messages are permanently wiped from Redis.
+- **Shared-Link Security**: Rooms are accessible only via a unique, non-guessable URL.
+- **Capacity Limits**: Rooms are strictly limited to 2 participants to ensure privacy.
+- **Token-Based Access**: Every participant is assigned a cryptographic token upon entry, preventing unauthorized eavesdropping.
+- **Modern HUD Interface**: A clean, cyberpunk-inspired dark UI built with Tailwind CSS v4.
 
 ##  Tech Stack
 
