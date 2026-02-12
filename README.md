@@ -11,16 +11,16 @@ A secure, ephemeral, request-based messaging application built for privacy and s
 [![Upstash](https://img.shields.io/badge/Upstash-Redis%20%26%20Realtime-00E9A3?style=for-the-badge)](https://upstash.com/)
 [![ElysiaJS](https://img.shields.io/badge/ElysiaJS-API-blueviolet?style=for-the-badge)](https://elysiajs.com/)
 
-## ✨ Key Features
+##  Key Features
 
-- **⚡ Instant Real-time Messaging**: Powered by Upstash Realtime (WebSocket/SSE) for sub-millisecond latency.
-- **👻 Truly Ephemeral**: Rooms have a strict Time-to-Live (TTL). Once the timer hits zero, the room and all messages are permanently wiped from Redis.
-- **🔒 Shared-Link Security**: Rooms are accessible only via a unique, non-guessable URL.
-- **👥 Capacity Limits**: Rooms are strictly limited to 2 participants to ensure privacy.
-- **🛡️ Token-Based Access**: Every participant is assigned a cryptographic token upon entry, preventing unauthorized eavesdropping.
-- **🎨 Modern HUD Interface**: A clean, cyberpunk-inspired dark UI built with Tailwind CSS v4.
+- ** Instant Real-time Messaging**: Powered by Upstash Realtime (WebSocket/SSE) for sub-millisecond latency.
+- ** Truly Ephemeral**: Rooms have a strict Time-to-Live (TTL). Once the timer hits zero, the room and all messages are permanently wiped from Redis.
+- ** Shared-Link Security**: Rooms are accessible only via a unique, non-guessable URL.
+- ** Capacity Limits**: Rooms are strictly limited to 2 participants to ensure privacy.
+- ** Token-Based Access**: Every participant is assigned a cryptographic token upon entry, preventing unauthorized eavesdropping.
+- ** Modern HUD Interface**: A clean, cyberpunk-inspired dark UI built with Tailwind CSS v4.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Frontend**: [Next.js 16](https://nextjs.org/) (App Router), [React 19](https://react.dev/), [Tailwind CSS v4](https://tailwindcss.com/)
 - **Backend API**: [ElysiaJS](https://elysiajs.com/) (running as a Next.js API route)
@@ -28,7 +28,7 @@ A secure, ephemeral, request-based messaging application built for privacy and s
 - **State Management**: [TanStack Query](https://tanstack.com/query/latest)
 - **Validation**: [Zod](https://zod.dev/)
 
-## 📂 Project Structure
+##  Project Structure
 
 This project follows a clean, modular architecture. Here is an overview of the key files:
 
@@ -56,7 +56,7 @@ This project follows a clean, modular architecture. Here is an overview of the k
 - **`proxy.ts`**: Contains logic intended for request interception (middleware).
   - _Note: Handles checks for "Room Full" and access token generation before loading the page logic._
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -94,7 +94,7 @@ This project follows a clean, modular architecture. Here is an overview of the k
    ```
    Open [http://localhost:3000](http://localhost:3000) to see the app.
 
-## 🤝 Contributing
+##  Contributing
 
 Contributions are active! Please verify that `config` in `proxy.ts` is correctly hooked up in your Next.js configuration if you plan to modify auth routing.
 
