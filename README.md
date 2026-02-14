@@ -1,4 +1,4 @@
-# 🤫 Private Realtime Chat
+#  Private Realtime Chat
 
 A secure, ephemeral, request-based messaging application built for privacy and speed. Features real-time communication with zero persistence guarantees suitable for quick, secret conversations.
 
