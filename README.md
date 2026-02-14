@@ -98,6 +98,6 @@ This project follows a clean, modular architecture. Here is an overview of the k
 
 Contributions are active! Please verify that `config` in `proxy.ts` is correctly hooked up in your Next.js configuration if you plan to modify auth routing.
 
-## 📄 License
+##  License
 
 MIT © 2026
